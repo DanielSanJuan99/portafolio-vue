@@ -1,5 +1,17 @@
+<!-- VUE trabaja de en componentes *.vue, los componentes se estructuran en
+  </scripts>  funciones en JS
+  </template> esquema HTML
+  </style>    estilos en CSS
+
+  Existen los estilos globales que se manejan en assets/base.css, pero 
+  cada componente puede tener sus propios estilos locales definidos dentro de su archivo .vue -->
+
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+/**
+ * Aquí se importa el componente HelloWorld para ser utilizado en este archivo.
+ * HelloWorld es un componente hijo que recibe una propiedad 'msg' para mostrar un mensaje (1).
+ */
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -8,6 +20,8 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
+      <!-- (1) Aquí es donde se importa el <template> del componente HelloWorld,
+        y a 'msg' se le entrega el string "You did it!" que se muestra en la página principal -->
       <HelloWorld msg="You did it!" />
 
       <nav>

@@ -18,6 +18,7 @@ defineProps({
   </div>
 </template>
 
+<!-- scoped => permite que el estilo generado en un componente, sea propio ÚNICAMENTE de ese mismo componente -->
 <style scoped>
 h1 {
   font-weight: 500;
