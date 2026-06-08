@@ -4,18 +4,17 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // RUTA HOME
     {
       path: '/',
       name: 'home',
       component: HomeView,
     },
+    // RUTA ABOUT
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/about', // path de la ruta
+      name: 'about', // nombre de la ruta
+      component: () => import('../views/AboutView.vue'), // componente que se renderiza al acceder a la ruta (carga perezosa)
     },
   ],
 })

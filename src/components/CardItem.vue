@@ -1,7 +1,6 @@
 <template>
   <div class="item">
     <img class="image" />
-    <!-- <hr> -->
     <div class="details">
       <h3><slot name="title" /></h3>
       <p><slot name="description" /></p>
