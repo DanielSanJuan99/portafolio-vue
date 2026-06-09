@@ -30,12 +30,6 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-  <!--
-    fixed top-0 w-full z-50: Fija el navbar arriba por encima de todo.
-    isScrolled evalúa: si bajas, se pone transparente con un desenfoque (backdrop-blur-md).
-    Si estás arriba, tiene un tono gris muy suave (bg-slate-100).
-    También añadimos clases 'dark:' para que cambie de color en modo oscuro.
-  -->
   <header
     :class="[
       'fixed top-0 left-0 w-full z-50 transition-all duration-300',
@@ -47,7 +41,6 @@ const toggleDarkMode = () => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
 
-        <!-- RUTAS DE NAVEGACIÓN (Izquierda) -->
         <nav class="flex gap-6">
           <RouterLink
             to="/"
@@ -63,13 +56,35 @@ const toggleDarkMode = () => {
           </RouterLink>
         </nav>
 
-        <!-- INTERRUPTOR MODO OSCURO (Derecha) -->
         <div>
           <button
             @click="toggleDarkMode"
-            class="px-3 py-1.5 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-slate-700 transition-colors font-medium text-sm"
+            class="relative p-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            aria-label="Alternar tema"
           >
-            {{ isDark ? 'Modo Claro' : 'Modo Oscuro' }}
+            <svg
+              v-if="!isDark"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
           </button>
         </div>
 
