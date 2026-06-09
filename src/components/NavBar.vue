@@ -1,6 +1,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 
 //Scroll state
 const isScrolled = ref(false)
@@ -46,21 +53,27 @@ const toggleDarkMode = () => {
             to="/"
             class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors"
           >
-            Inicio
+            {{ $t('nav.home') }}
           </RouterLink>
           <RouterLink
             to="/about"
             class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition-colors"
           >
-            Sobre mí
+            {{ $t('nav.about') }}
           </RouterLink>
         </nav>
 
-        <div>
+        <div class="flex items-center gap-4">
+          <button
+            @click="toggleLanguage"
+            class="px-3 py-1.5 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/50 transition-colors font-bold text-sm uppercase tracking-wider"
+          >
+            {{  locale  }}
+          </button>
           <button
             @click="toggleDarkMode"
             class="relative p-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-            aria-label="Alternar tema"
+            :aria-label="$t('theme.toggle')"
           >
             <svg
               v-if="!isDark"

@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About me"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Software Engineer & Full-Stack Developer.",
+    "description": "Specialized in building robust architectures with Spring Boot and interactive experiences with Vue 3.",
+    "projects": "See my projects",
+    "github": "Visit my GitHub"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "projects": {
+    "title": "My Projects",
+    "kafka": {
+        "name": "Microservices with Kafka",
+        "description": "Messaging architecture for asynchronous data processing."
+    },
+    "streaming": {
+        "name": "Streaming Automation",
+        "description": "Desktop tool to integrate OBS and Twitch via API."
+    },
+    "viewRepo": "View Repository"
+  },
+  "timeline":{
+    "title": "About me",
+    "description": "A quick look at my professional journey and most notable experiences.",
+    "company_1": {
+        "title": "Junior Developer at XYZ Company",
+        "subtitle": "Developed web applications with Vue.js and Spring Boot",
+        "date": "2020 - 2021",
+        "description": "Participated in the development of several internal applications, improving my skills in Java and Vue.js."
+    },
+    "company_2": {
+        "title": "Full-Stack Developer at ABC Tech",
+        "subtitle": "Led microservices and desktop application projects",
+        "date": "2021 - 2023",
+        "description": "Worked on creating microservices with Kafka and developed a desktop tool using Electron to integrate with Twitch."
+    }
+  }
+}

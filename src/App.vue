@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
-import Footer from './components/AppFooter.vue/index.js'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <!-- TABRAJAR COMO SPA: UTILIZAR COMO MARCO PARA NAVEGAR -->
@@ -13,7 +13,7 @@ import Footer from './components/AppFooter.vue/index.js'
       <RouterView />
     </div>
 
-    <Footer />
+    <AppFooter />
   </div>
 </template>
 
