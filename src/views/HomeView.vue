@@ -1,8 +1,10 @@
 <script setup>
+import HeroSection from '@/components/HeroSection.vue'
 import ProjectCard from '@/components/projects/ProjectCard.vue'
 </script>
 
 <template>
+  <HeroSection />
   <main  class="p-8">
     <h1 class="text-4xl font-bold">WELCOME TO DROCK'S BACKYARD</h1>
     <p class="mt-4 text-lg">
@@ -33,3 +35,9 @@ import ProjectCard from '@/components/projects/ProjectCard.vue'
     </div>
   </main>
 </template>
+
+<style scoped>
+html {
+  scroll-behavior: smooth;
+}
+</style>
