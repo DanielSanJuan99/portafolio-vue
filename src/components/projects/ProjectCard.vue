@@ -1,4 +1,5 @@
 <script setup>
+import TechBadge from '../TechBadge.vue'
 // Definimos las propiedades que este componente va a recibir desde afuera
 defineProps({
   title: {
@@ -40,13 +41,11 @@ defineProps({
     <div class="mt-6">
       <!-- Contenedor de tecnologías (Aquí luego integraremos el TechBadge) -->
       <div class="flex flex-wrap gap-2 mb-6">
-        <span
+        <TechBadge
           v-for="(tech, index) in technologies"
           :key="index"
-          class="px-2.5 py-1 text-xs font-medium bg-blue-50 dark:bg-slate-700 text-blue-600 dark:text-blue-300 rounded-md"
-        >
-          {{ tech }}
-        </span>
+          :name="tech"
+        />
       </div>
 
       <!-- Botón de GitHub o Enlace -->
