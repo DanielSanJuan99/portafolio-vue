@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import HeroSection from '@/components/HeroSection.vue'
 import ProjectCard from '@/components/projects/ProjectCard.vue'
+import TechStack from '@/components/TechStack.vue'
 
 const { t } = useI18n()
 
@@ -27,6 +28,10 @@ const myProjects = computed(() => [
 <template>
   <main>
     <HeroSection />
+    <section class="max-w-7xl mx-auto p8 pt-10">
+      <TechStack />
+    </section>
+
     <section id="proyectos" class="max-w-7xl mx-auto p-8 pt-20">
       <h1 class="text-3xl font-bold mb-10 text-gray-900 dark:text-white transition-colors">
         {{ $t('projects.title') }}

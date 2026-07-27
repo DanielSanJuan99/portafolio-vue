@@ -12,7 +12,7 @@ const colorMap = {
   'vue': 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800/60',
   'vue 3': 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800/60',
   'spring boot': 'bg-green-50 text-green-700 border-green-200 dark:bg-green-950/40 dark:text-green-400 dark:border-green-800/60',
-  'java': 'bg-red-50 text-red-700 border-ordange-200 dark:bg-red-950/40 dark:text-red-400 dark:border-red-800/60',
+  'java': 'bg-red-50 text-red-700 border-red-200-200 dark:bg-red-950/40 dark:text-red-400 dark:border-red-800/60',
   'python': 'bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-950/40 dark:text-yellow-400 dark:border-yellow-800/60',
   'docker': 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-400 dark:border-blue-800/60',
   'kafka': 'bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-950/40 dark:text-orange-400 dark:border-orange-800/60',

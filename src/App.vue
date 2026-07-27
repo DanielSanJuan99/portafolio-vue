@@ -9,7 +9,7 @@ import AppFooter from './components/AppFooter.vue'
   <NavBar />
 
   <div class="flex flex-col min-h-screen pt-20 bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-    <div class="flex-grow">
+    <div class="grow">
       <RouterView />
     </div>
 
