@@ -19,7 +19,7 @@ const myProjects = computed(() => [
     id: 2,
     title: t('projects.streaming.name'),
     description: t('projects.streaming.description'),
-    technologies: ['Electron', 'Vue 3', 'Twurple'],
+    technologies: ['Electron', 'Node.js', 'Twurple', 'JavaScript'],
     githubLink: 'https://github.com/tu-usuario'
   }
 ])
@@ -28,7 +28,7 @@ const myProjects = computed(() => [
 <template>
   <main>
     <HeroSection />
-    <section class="max-w-7xl mx-auto p8 pt-10">
+    <section class="max-w-7xl mx-auto p-8 pt-10">
       <TechStack />
     </section>
 

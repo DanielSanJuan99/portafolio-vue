@@ -20,8 +20,8 @@
         "description": "Arquitectura de mensajería para procesamiento asíncrono de datos."
     },
     "streaming": {
-        "name": "Automatización de Streaming",
-        "description": "Herramienta de escritorio para integrar OBS y Twitch mediante la API."
+        "name": "Zora Deck",
+        "description": "Herramienta de escritorio para integrar OBS y Twitch mediante una API para automatizar alertas y acciones en streaming."
     },
     "viewRepo": "Ver Repositorio"
   },
