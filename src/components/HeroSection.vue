@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="relative py-20 lg: py-32 overflow-hidden flex item-center justify-center min-h-[70hv]">
+  <section class="relative py-20 lg:py-32 overflow-hidden flex item-center justify-center min-h-[70hv]">
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
       <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-grey-900 dark:text-white mb-6 transition-colors duration-300">

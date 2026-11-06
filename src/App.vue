@@ -1,7 +1,19 @@
 <script setup>
+import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import NavBar from './components/NavBar.vue'
 import AppFooter from './components/AppFooter.vue'
+import { usePreferencesStore } from './stores/preferences'
+
+const preferences = usePreferencesStore()
+const { locale } = useI18n()
+
+//Se ejecuta al cargar la página
+onMounted(()=>{
+  preferences.applyTheme() // Aplica el fondo oscuro/claro guardado en memoria
+  locale.value = preferences.locale // Aplica el idioma guardado en vue-i18n
+})
 </script>
 
 <!-- TABRAJAR COMO SPA: UTILIZAR COMO MARCO PARA NAVEGAR -->

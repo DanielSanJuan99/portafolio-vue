@@ -1,13 +1,15 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { usePreferencesStore } from '../stores/preferences'
 
+const preferences = usePreferencesStore()
 const { locale } = useI18n()
 
-const toggleLanguage = () => {
-  locale.value = locale.value === 'es' ? 'en' : 'es'
-}
+watch(() => preferences.locale, (newLocale) => {
+  locale.value = newLocale
+})
 
 //Scroll state
 const isScrolled = ref(false)
@@ -16,24 +18,9 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
+onMounted(() => window.addEventListener('scroll', handleScroll))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
-
-const isDark = ref(false)
-
-const toggleDarkMode = () => {
-  isDark.value = !isDark.value
-  if (isDark.value) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
-}
 </script>
 
 <template>
@@ -65,18 +52,18 @@ const toggleDarkMode = () => {
 
         <div class="flex items-center gap-4">
           <button
-            @click="toggleLanguage"
+            @click="preferences.toggleLanguage()"
             class="px-3 py-1.5 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/50 transition-colors font-bold text-sm uppercase tracking-wider"
           >
-            {{  locale  }}
+            {{  preferences.locale  }}
           </button>
           <button
-            @click="toggleDarkMode"
+            @click="preferences.toggleTheme()"
             class="relative p-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             :aria-label="$t('theme.toggle')"
           >
             <svg
-              v-if="!isDark"
+              v-if="!preferences.isDark"
               xmlns="http://www.w3.org/2000/svg"
               class="w-5 h-5"
               fill="none"

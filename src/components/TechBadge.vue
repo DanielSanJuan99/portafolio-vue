@@ -91,7 +91,7 @@ const techConfig = {
     icon: 'logos:nodejs-icon'
   },
   'github': {
-    style: 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-950/40 dark:text-gray-400 dark:border-gray-800/60',
+    style: 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-400/40 dark:text-gray-100 dark:border-gray-800/60',
     icon: 'logos:github-icon'
   }
 }
@@ -107,7 +107,7 @@ const badgeClass = computed(() => {
 <template>
   <span
     :class="[
-      'inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold border transition-colors duration-300',
+      'inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold border transition-colors duration-300',
       badgeClass.style
     ]"
   >
